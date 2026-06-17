@@ -5,6 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const beltScroll = document.querySelector('.belt-scroll');
   const lightbox = document.querySelector('#albumLightbox');
 
+  if (typeof emailjs !== 'undefined') {
+    emailjs.init('zd83farzYX_vJX7Fg');
+  }
+
   initAlbumLightbox(lightbox);
 
   if (beltGrid && Array.isArray(beltItems)) {
@@ -77,16 +81,14 @@ document.addEventListener('DOMContentLoaded', () => {
     successBox.hidden = true;
 
     try {
-      const res = await fetch('/api/send', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(request),
+      await emailjs.send('service_rys2p3l', 'Template ID', {
+        name: request.name,
+        phone: request.phone,
+        group: request.group,
+        day: request.day,
+        comment: request.comment || 'Не указан',
+        date: new Date(request.createdAt).toLocaleString('ru-RU'),
       });
-
-      if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        throw new Error(data.error || 'Send failed');
-      }
 
       const savedRequests = readSavedRequests();
       savedRequests.push(request);
