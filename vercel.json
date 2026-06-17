@@ -1,7 +1,6 @@
 {
   "functions": {
     "api/send.js": {
-      "runtime": "@vercel/node@3",
       "maxDuration": 15
     }
   }
