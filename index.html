@@ -3,18 +3,104 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>АКАДЕМИЯ КАРАТЭ KATSURO</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="images/logo.ico">
+  <link rel="apple-touch-icon" href="images/logo.ico">
+
+  <!-- SEO Meta -->
+  <title>Академия каратэ KATSURO — тренировки каратэ для детей и взрослых в Курчатове</title>
+  <meta name="description" content="Академия каратэ KATSURO в Курчатове. Тренировки каратэ для детей от 4 лет и взрослых. Мастер спорта международного класса, 3-кратный чемпион мира. Запишитесь на пробное занятие!">
+  <meta name="keywords" content="каратэ, карате, секция каратэ, тренировки каратэ, каратэ для детей, каратэ для взрослых, KATSURO, Курчатов, единоборства, боевые искусства, шотокан, WKC, чемпион мира">
+  <meta name="author" content="KATSURO">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://katsuro.ru/">
+
+  <!-- Open Graph / VK -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="Академия каратэ KATSURO — тренировки каратэ для детей и взрослых">
+  <meta property="og:description" content="Тренировки каратэ для детей от 4 лет и взрослых в Курчатове. Мастер спорта международного класса, 3-кратный чемпион мира. Запишитесь на пробное занятие!">
+  <meta property="og:image" content="images/logo.webp">
+  <meta property="og:url" content="https://katsuro.ru/">
+  <meta property="og:site_name" content="KATSURO">
+
+  <!-- Yandex specific -->
+  <meta name="yandex-verification" content="">
+  <meta name="geo.region" content="RU-BRY">
+  <meta name="geo.placename" content="Курчатов">
+  <meta name="geo.position" content="51.7272;36.5874">
+  <meta name="ICBM" content="51.7272, 36.5874">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Академия каратэ KATSURO">
+  <meta name="twitter:description" content="Тренировки каратэ для детей и взрослых в Курчатове. Мастер спорта, чемпион мира.">
+  <meta name="twitter:image" content="images/logo.webp">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&family=Noto+Serif:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+
+  <!-- Structured Data / JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsActivityLocation",
+    "name": "KATSURO — Академия каратэ",
+    "description": "Академия каратэ KATSURO. Тренировки каратэ для детей от 4 лет и взрослых в Курчатове. Мастер спорта международного класса, 3-кратный чемпион мира.",
+    "url": "https://katsuro.ru/",
+    "telephone": "+7-929-036-32-56",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ул. 50 лет Октября, 135",
+      "addressLocality": "Курчатов",
+      "addressRegion": "Курская область",
+      "addressCountry": "RU"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 51.7272,
+      "longitude": 36.5874
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Thursday", "Friday"],
+        "opens": "17:00",
+        "closes": "20:00"
+      }
+    ],
+    "priceRange": "$$",
+    "sport": "Karate",
+    "availableLanguage": "Russian",
+    "founder": {
+      "@type": "Person",
+      "name": "Полина Александра Юрьевна",
+      "jobTitle": "Тренер",
+      "description": "Мастер спорта международного класса, чёрный пояс 2 дан, 3-кратный чемпион мира, 3-кратный чемпион России"
+    },
+    "sameAs": [
+      "https://vk.com/katsurokarate"
+    ]
+  }
+  </script>
 </head>
 <body>
   <div class="belt-scroll" aria-hidden="true">
-    <div class="belt-scroll__track">
+    <div class="belt-scroll__track" id="beltScrollTrack">
       <div class="belt-scroll__thumb">
         <span class="belt-scroll__stripe"></span>
       </div>
+      <button class="belt-scroll__dot" data-section="hero" title="Главная"></button>
+      <button class="belt-scroll__dot" data-section="karate-history" title="История"></button>
+      <button class="belt-scroll__dot" data-section="about" title="Тренер"></button>
+      <button class="belt-scroll__dot" data-section="path-of-mastery" title="Пояса"></button>
+      <button class="belt-scroll__dot" data-section="programs" title="Группы"></button>
+      <button class="belt-scroll__dot" data-section="students" title="Ученики"></button>
+      <button class="belt-scroll__dot" data-section="trial" title="Запись"></button>
+      <button class="belt-scroll__dot" data-section="contact" title="Контакты"></button>
     </div>
     <span class="belt-scroll__label">10 кю</span>
   </div>
@@ -23,7 +109,7 @@
   <header class="header">
     <div class="header__inner">
       <a href="#" class="logo">
-        <img src="images/logo.jpg" alt="KATSURO" class="logo__img">
+        <img src="images/logo.webp" alt="KATSURO" class="logo__img">
         <span class="logo__text">KATSURO</span>
       </a>
       <nav class="nav">
@@ -44,7 +130,7 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero__bg">
-      <img src="images/hero-bg.jpg" alt="" class="hero__bg-img">
+      <img src="images/hero-bg.webp" alt="" class="hero__bg-img" fetchpriority="high">
       <div class="hero__overlay"></div>
     </div>
     <div class="hero__inner">
@@ -93,7 +179,7 @@
       </div>
 
       <div class="history__lesson">
-        <span>Каратэ ни сэнтэ наси</span>
+        <span>空手に先手なし</span>
         <p>«В каратэ не бывает первой атаки». Главная победа начинается не с удара, а с умения владеть собой.</p>
       </div>
     </div>
@@ -104,7 +190,7 @@
     <div class="container">
       <div class="about__grid">
         <div class="about__image">
-          <img src="images/trainer.jpg" alt="Полина Александра Юрьевна" loading="lazy">
+          <img src="images/trainer.webp" alt="Полина Александра Юрьевна" loading="lazy">
           <div class="about__badge">17+ лет в каратэ</div>
         </div>
         <div class="about__content">
@@ -333,7 +419,7 @@
       <div class="students__grid">
         <button class="students__card" type="button" data-album="competitions">
           <div class="students__card-img">
-            <img src="https://images.unsplash.com/photo-1555597673-b21d5c935865?w=800&h=600&fit=crop" alt="Соревнования по каратэ" loading="lazy">
+            <img src="images/sorevnovania6.webp" alt="Соревнования по каратэ" loading="lazy">
           </div>
           <div class="students__card-body">
             <div class="students__card-icon">🏆</div>
@@ -345,7 +431,7 @@
 
         <button class="students__card" type="button" data-album="seminars">
           <div class="students__card-img">
-            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=600&fit=crop" alt="Сборы и семинары" loading="lazy">
+            <img src="images/Sbori.webp" alt="Сборы и семинары" loading="lazy">
           </div>
           <div class="students__card-body">
             <div class="students__card-icon">📚</div>
@@ -357,7 +443,7 @@
 
         <button class="students__card" type="button" data-album="gto">
           <div class="students__card-img">
-            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop" alt="ГТО и физическая подготовка" loading="lazy">
+            <img src="images/GTO.webp" alt="ГТО и физическая подготовка" loading="lazy">
           </div>
           <div class="students__card-body">
             <div class="students__card-icon">💪</div>
@@ -369,7 +455,7 @@
 
         <button class="students__card" type="button" data-album="club">
           <div class="students__card-img">
-            <img src="https://images.unsplash.com/photo-1609710228159-0fa9bd7c0827?w=800&h=600&fit=crop" alt="Жизнь клуба KATSURO" loading="lazy">
+            <img src="images/ycheniki.webp" alt="Жизнь клуба KATSURO" loading="lazy">
           </div>
           <div class="students__card-body">
             <div class="students__card-icon">🥋</div>
@@ -395,6 +481,22 @@
       </div>
     </div>
   </div>
+
+  <!-- PHOTO VIEWER -->
+  <div class="photo-viewer" id="photoViewer" aria-hidden="true">
+    <div class="photo-viewer__backdrop"></div>
+    <div class="photo-viewer__wrap">
+      <button class="photo-viewer__btn photo-viewer__btn--prev" type="button" aria-label="Предыдущее фото">‹</button>
+      <div class="photo-viewer__stage">
+        <img class="photo-viewer__img" id="photoViewerImg" src="" alt="">
+        <span class="photo-viewer__caption" id="photoViewerCaption"></span>
+        <span class="photo-viewer__counter" id="photoViewerCounter"></span>
+      </div>
+      <button class="photo-viewer__btn photo-viewer__btn--next" type="button" aria-label="Следующее фото">›</button>
+      <button class="photo-viewer__close" type="button" aria-label="Закрыть">✕</button>
+    </div>
+  </div>
+
   <!-- TRIAL FORM -->
   <section id="trial" class="trial section">
     <div class="container">
@@ -479,7 +581,7 @@
       <div class="footer__grid">
         <div class="footer__brand">
           <a href="#" class="logo logo--light">
-            <img src="images/logo.jpg" alt="KATSURO" class="logo__img">
+            <img src="images/logo.webp" alt="KATSURO" class="logo__img">
             <span class="logo__text">KATSURO</span>
           </a>
           <p class="footer__tagline">«Katsuro» — путь победы.<br>Мы не просто учим боевым приёмам, а ведём по особому пути самосовершенствования.</p>
@@ -553,9 +655,20 @@
       { kyu: '2 кю', name: 'Синий пояс', months: '10-12 месяцев', colors: ['#2878d8'], motto: 'Широта взгляда', quote: 'Небо открывается тем, кто продолжает идти.', text: 'Синий пояс символизирует пространство и зрелость взгляда. Ученик увереннее действует под давлением, быстрее принимает решения и учится сохранять спокойствие, даже когда техника требует силы и скорости.' },
       { kyu: '1 кю', name: 'Коричневый пояс', months: '12+ месяцев', colors: ['#79512e'], motto: 'Прочная основа', quote: 'Чёрный пояс начинается задолго до экзамена.', text: 'Коричневый пояс — последняя ступень перед новым началом. Здесь проверяются не только удары и ката, но и характер: выдержка, уважение, стабильность, готовность быть примером для младших учеников.' },
       { kyu: '1 дан', name: 'Чёрный пояс', months: '9-10 лет пути', colors: ['#111111'], motto: 'Мастерство основ', quote: 'Чёрный пояс — это белый пояс, который не перестал тренироваться.', text: 'Чёрный пояс не завершает путь, а открывает его глубину. Ученик становится носителем традиции: он владеет базой, понимает ответственность силы и продолжает совершенствовать технику, дух и отношение к людям.' },
-      { kyu: '2-10 дан', name: 'Путь продолжается', months: 'всю жизнь', colors: ['#111111'], motto: 'Настоящее мастерство — в постоянстве', quote: 'Победа начинается там, где человек выбирает не останавливаться.', text: 'Каждая тренировка делает характер крепче: больше спокойствия, точности, уважения и внутренней силы. KATSURO помогает идти дальше — шаг за шагом, пояс за поясом, победа за победой. Отсылка к истории каратэ: от окинавской самозащиты пустыми руками до официального представления искусства Гичином Фунакоши в Японии в 1922 году.', japanese: '空手道', highlight: true, historical: true }
+      {
+  kyu: 'Карате',
+  name: 'Продолжение пути',
+  months: 'Всю жизнь',
+  colors: ['#111111'],
+  motto: 'Настоящее мастерство — в постоянстве',
+  quote: 'Победа начинается там, где человек выбирает не останавливаться.',
+  text: 'Путь искусства «пустой руки», зародившегося на Окинаве и открытого миру Гитином Фунакоси в 1922 году, не заканчивается черным поясом. Каждая тренировка выковывает характер: дарует спокойствие, оттачивает точность и взращивает внутреннюю силу. KATSURO — ваш проводник на этом пути. Шаг за шагом, пояс за поясом, мы помогаем вам идти вперед и побеждать.',
+  japanese: '空手道',
+  highlight: true,
+  historical: true
+}
     ];
   </script>
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

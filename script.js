@@ -189,6 +189,41 @@ function initBeltScroll(widget, beltItems) {
   const thumb = widget.querySelector('.belt-scroll__thumb');
   const label = widget.querySelector('.belt-scroll__label');
   const stripe = widget.querySelector('.belt-scroll__stripe');
+  const dots = widget.querySelectorAll('.belt-scroll__dot');
+
+  const sections = Array.from(dots).map(dot => {
+    const id = dot.dataset.section;
+    return { dot, el: document.getElementById(id) };
+  }).filter(s => s.el);
+
+  // Position dots evenly on track
+  const trackH = track.offsetHeight;
+  sections.forEach((s, i) => {
+    const pct = sections.length > 1 ? i / (sections.length - 1) : 0.5;
+    s.dot.style.top = `${pct * 100}%`;
+  });
+
+  // Click on dot → scroll to section
+  dots.forEach(dot => {
+    dot.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const id = dot.dataset.section;
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Click on track → scroll to position
+  track.addEventListener('click', (e) => {
+    if (e.target.closest('.belt-scroll__dot')) return;
+    const rect = track.getBoundingClientRect();
+    const clickY = e.clientY - rect.top;
+    const pct = Math.max(0, Math.min(1, clickY / rect.height));
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    window.scrollTo({ top: maxScroll * pct, behavior: 'smooth' });
+  });
 
   function update() {
     const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
@@ -203,11 +238,31 @@ function initBeltScroll(widget, beltItems) {
     thumb.style.setProperty('--scroll-belt-main', mainColor);
     stripe.style.setProperty('--scroll-belt-stripe', stripeColor);
     label.textContent = belt.kyu;
+
+    // Highlight active section dot
+    let activeIdx = 0;
+    for (let i = sections.length - 1; i >= 0; i--) {
+      const rect = sections[i].el.getBoundingClientRect();
+      if (rect.top <= window.innerHeight * 0.4) {
+        activeIdx = i;
+        break;
+      }
+    }
+    sections.forEach((s, i) => {
+      s.dot.classList.toggle('is-active', i === activeIdx);
+    });
   }
 
   update();
   window.addEventListener('scroll', update, { passive: true });
-  window.addEventListener('resize', update);
+  window.addEventListener('resize', () => {
+    // Re-position dots on resize
+    sections.forEach((s, i) => {
+      const pct = sections.length > 1 ? i / (sections.length - 1) : 0.5;
+      s.dot.style.top = `${pct * 100}%`;
+    });
+    update();
+  });
 }
 
 async function sendTrialRequest(endpoint, request) {
@@ -245,45 +300,44 @@ const albumData = {
   competitions: {
     title: 'Соревнования',
     photos: [
-      { src: 'https://images.unsplash.com/photo-1555597673-b21d5c935865?w=800&h=600&fit=crop', caption: 'Чемпионат по каратэ' },
-      { src: 'https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=800&h=600&fit=crop', caption: 'Соревновательный поединок' },
-      { src: 'https://images.unsplash.com/photo-1517438322307-e67111335449?w=800&h=600&fit=crop', caption: 'Церемония награждения' },
-      { src: 'https://images.unsplash.com/photo-1571019614244-c35c1eaa800c?w=800&h=600&fit=crop', caption: 'Подготовка к бою' },
-      { src: 'https://images.unsplash.com/photo-1552072092-7f9b8d63efcb?w=800&h=600&fit=crop', caption: 'Первый турнир' },
-      { src: 'https://images.unsplash.com/photo-1615117950532-6b207f23bc78?w=800&h=600&fit=crop', caption: 'Победная стойка' }
+      { src: 'images/sorevnovania.webp', caption: 'каратэ' },
+      { src: 'images/sorevnovania0.webp', caption: '' },
+      { src: 'images/sorevnovania1.webp', caption: '' },
+      { src: 'images/sorevnovania2.webp', caption: '' },
+      { src: 'images/sorevnovania3.webp', caption: '' },
+      { src: 'images/sorevnovania4.webp', caption: '' },
+      { src: 'images/sorevnovania5.webp', caption: '' },
+      { src: 'images/sorevnovania6.webp', caption: '' },
+      { src: 'images/sorevnovania7.webp', caption: '' },
+      { src: 'images/sorevnovania8.webp', caption: '' },
+      { src: 'images/sorevnovania9.webp', caption: '' },
+      { src: 'images/sorevnovania10.webp', caption: '' },
+      { src: 'images/sorevnovania11.webp', caption: '' },
+      { src: 'images/sorevnovania12.webp', caption: '' },
+      { src: 'images/sorevnovania13.webp', caption: '' },
+      { src: 'images/sorevnovania14.webp', caption: '' }
     ]
   },
   seminars: {
     title: 'Сборы и семинары',
     photos: [
-      { src: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=600&fit=crop', caption: 'Тренировочный сбор' },
-      { src: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=600&fit=crop', caption: 'Медитация и концентрация' },
-      { src: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&h=600&fit=crop', caption: 'Работа в паре' },
-      { src: 'https://images.unsplash.com/photo-1555597408-26bc8e548a46?w=800&h=600&fit=crop', caption: 'Мастер-класс' },
-      { src: 'https://images.unsplash.com/photo-1549576490-b0b4831ef60a?w=800&h=600&fit=crop', caption: 'Растяжка перед тренировкой' },
-      { src: 'https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=800&h=600&fit=crop', caption: 'Командная фотография' }
-    ]
+      { src: 'images/Sbori.webp', caption: 'Тренировочный сбор' },
+      { src: 'images/Sbori0.webp', caption: '' }
+         ]
   },
   gto: {
     title: 'ГТО и ОФП',
-    photos: [
-      { src: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop', caption: 'Физическая подготовка' },
-      { src: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&h=600&fit=crop', caption: 'Утренняя зарядка' },
-      { src: 'https://images.unsplash.com/photo-1576678927484-cc907957088c?w=800&h=600&fit=crop', caption: 'Упражнения на выносливость' },
-      { src: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=600&fit=crop', caption: 'Сила и координация' },
-      { src: 'https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?w=800&h=600&fit=crop', caption: 'Нормативы ГТО' },
-      { src: 'https://images.unsplash.com/photo-1574680178050-55c6a6a96e0a?w=800&h=600&fit=crop', caption: 'Командные эстафеты' }
+     photos: [
+      { src: 'images/GTO.webp', caption: 'ГТО' },
+      { src: 'images/GTO0.webp', caption: '' },
+      { src: 'images/GTO1.webp', caption: '' }
     ]
   },
   club: {
     title: 'Жизнь клуба',
-    photos: [
-      { src: 'https://images.unsplash.com/photo-1609710228159-0fa9bd7c0827?w=800&h=600&fit=crop', caption: 'Наш зал' },
-      { src: 'https://images.unsplash.com/photo-1517438322307-e67111335449?w=800&h=600&fit=crop', caption: 'Аттестация на пояс' },
-      { src: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=600&fit=crop', caption: 'Тренировка младшей группы' },
-      { src: 'https://images.unsplash.com/photo-1571019614244-c35c1eaa800c?w=800&h=600&fit=crop', caption: 'Праздник в клубе' },
-      { src: 'https://images.unsplash.com/photo-1555597408-26bc8e548a46?w=800&h=600&fit=crop', caption: 'Командный дух' },
-      { src: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=600&fit=crop', caption: 'Памятные моменты' }
+     photos: [
+      { src: 'images/ycheniki.webp', caption: 'Ученики' },
+      { src: 'images/ycheniki0.webp', caption: '' }
     ]
   }
 };
@@ -295,15 +349,28 @@ function initAlbumLightbox(lightbox) {
   const closeBtn = lightbox.querySelector('.lightbox__close');
   const titleEl = lightbox.querySelector('#lightboxTitle');
   const gridEl = lightbox.querySelector('#lightboxGrid');
+  const viewer = document.getElementById('photoViewer');
+  const viewerImg = document.getElementById('photoViewerImg');
+  const viewerCaption = document.getElementById('photoViewerCaption');
+  const viewerCounter = document.getElementById('photoViewerCounter');
+  const viewerPrev = viewer.querySelector('.photo-viewer__btn--prev');
+  const viewerNext = viewer.querySelector('.photo-viewer__btn--next');
+  const viewerClose = viewer.querySelector('.photo-viewer__close');
+  const viewerBackdrop = viewer.querySelector('.photo-viewer__backdrop');
+
+  let currentPhotos = [];
+  let currentIndex = 0;
 
   function openAlbum(albumKey) {
     const album = albumData[albumKey];
     if (!album) return;
 
+    currentPhotos = album.photos;
     titleEl.textContent = album.title;
-    gridEl.innerHTML = album.photos.map(p =>
-      `<div class="lightbox__item">
-        <img src="${p.src}" alt="${p.caption}" loading="lazy">
+
+    gridEl.innerHTML = album.photos.map((p, i) =>
+      `<div class="lightbox__item" data-photo-index="${i}">
+        <img src="${p.src}" alt="${p.caption}" loading="lazy" decoding="async">
         <div class="lightbox__item-caption"><span>${p.caption}</span></div>
       </div>`
     ).join('');
@@ -317,16 +384,100 @@ function initAlbumLightbox(lightbox) {
     document.body.style.overflow = '';
   }
 
+  function openPhoto(index) {
+    if (index < 0 || index >= currentPhotos.length) return;
+    currentIndex = index;
+    const photo = currentPhotos[index];
+
+    viewerImg.style.opacity = '0';
+    viewerImg.src = photo.src;
+    viewerImg.alt = photo.caption;
+    viewerCaption.textContent = photo.caption;
+    viewerCounter.textContent = `${index + 1} / ${currentPhotos.length}`;
+
+    viewerImg.onload = () => { viewerImg.style.opacity = '1'; };
+
+    viewer.setAttribute('aria-hidden', 'false');
+    lightbox.setAttribute('aria-hidden', 'true');
+
+    preloadAdjacent(index);
+  }
+
+  function closeViewer() {
+    viewer.setAttribute('aria-hidden', 'true');
+    viewerImg.src = '';
+    lightbox.setAttribute('aria-hidden', 'false');
+  }
+
+  function closeAll() {
+    viewer.setAttribute('aria-hidden', 'true');
+    viewerImg.src = '';
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  function preloadAdjacent(index) {
+    [index - 1, index + 1].forEach(i => {
+      if (i >= 0 && i < currentPhotos.length) {
+        const img = new Image();
+        img.src = currentPhotos[i].src;
+      }
+    });
+  }
+
+  function showPrev() {
+    if (currentIndex > 0) openPhoto(currentIndex - 1);
+  }
+
+  function showNext() {
+    if (currentIndex < currentPhotos.length - 1) openPhoto(currentIndex + 1);
+  }
+
+  // Album click
   document.querySelectorAll('[data-album]').forEach(btn => {
     btn.addEventListener('click', () => openAlbum(btn.dataset.album));
   });
 
+  // Photo click (delegation)
+  gridEl.addEventListener('click', (e) => {
+    const item = e.target.closest('[data-photo-index]');
+    if (item) openPhoto(Number(item.dataset.photoIndex));
+  });
+
+  // Viewer controls
+  viewerPrev.addEventListener('click', showPrev);
+  viewerNext.addEventListener('click', showNext);
+  viewerClose.addEventListener('click', closeViewer);
+  viewerBackdrop.addEventListener('click', closeViewer);
+
+  // Album close
   closeBtn.addEventListener('click', closeLightbox);
   backdrop.addEventListener('click', closeLightbox);
 
+  // Keyboard
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && lightbox.getAttribute('aria-hidden') === 'false') {
-      closeLightbox();
+    const viewerOpen = viewer.getAttribute('aria-hidden') === 'false';
+    const lightboxOpen = lightbox.getAttribute('aria-hidden') === 'false';
+
+    if (viewerOpen) {
+      if (e.key === 'Escape') closeViewer();
+      if (e.key === 'ArrowLeft') showPrev();
+      if (e.key === 'ArrowRight') showNext();
+    } else if (lightboxOpen) {
+      if (e.key === 'Escape') closeLightbox();
     }
   });
+
+  // Touch swipe
+  let touchStartX = 0;
+  viewer.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  viewer.addEventListener('touchend', (e) => {
+    const diff = e.changedTouches[0].screenX - touchStartX;
+    if (Math.abs(diff) > 50) {
+      diff > 0 ? showPrev() : showNext();
+    }
+  }, { passive: true });
 }
