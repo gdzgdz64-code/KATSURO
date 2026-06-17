@@ -77,7 +77,16 @@ document.addEventListener('DOMContentLoaded', () => {
     successBox.hidden = true;
 
     try {
-      await sendTrialRequest(trialForm.dataset.emailEndpoint, request);
+      const res = await fetch('/api/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(request),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || 'Send failed');
+      }
 
       const savedRequests = readSavedRequests();
       savedRequests.push(request);
@@ -263,36 +272,6 @@ function initBeltScroll(widget, beltItems) {
     });
     update();
   });
-}
-
-async function sendTrialRequest(endpoint, request) {
-  if (!endpoint) {
-    throw new Error('Email endpoint is missing');
-  }
-
-  const payload = new FormData();
-  payload.append('_subject', 'Новая заявка на тренировку KATSURO');
-  payload.append('_template', 'table');
-  payload.append('Имя', request.name);
-  payload.append('Телефон', request.phone);
-  payload.append('Группа', request.group);
-  payload.append('День', request.day);
-  payload.append('Комментарий', request.comment || 'Не указан');
-  payload.append('Дата заявки', new Date(request.createdAt).toLocaleString('ru-RU'));
-
-  const response = await fetch(endpoint, {
-    method: 'POST',
-    headers: {
-      Accept: 'application/json'
-    },
-    body: payload
-  });
-
-  if (!response.ok) {
-    throw new Error('Email request failed');
-  }
-
-  return response.json();
 }
 
 /* ALBUM LIGHTBOX */
