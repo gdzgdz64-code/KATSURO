@@ -1,0 +1,674 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="images/logo.ico">
+  <link rel="apple-touch-icon" href="images/logo.ico">
+
+  <!-- SEO Meta -->
+  <title>Академия каратэ KATSURO — тренировки каратэ для детей и взрослых в Курске</title>
+  <meta name="description" content="Академия каратэ KATSURO в Курске. Тренировки каратэ для детей от 4 лет и взрослых. Мастер спорта международного класса, 3-кратный чемпион мира. Запишитесь на пробное занятие!">
+  <meta name="keywords" content="каратэ, карате, секция каратэ, тренировки каратэ, каратэ для детей, каратэ для взрослых, KATSURO, Курск, единоборства, боевые искусства, шотокан, WKC, чемпион мира">
+  <meta name="author" content="KATSURO">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://katsuro.vercel.app/">
+
+  <!-- Open Graph / VK -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="Академия каратэ KATSURO — тренировки каратэ для детей и взрослых">
+  <meta property="og:description" content="Тренировки каратэ для детей от 4 лет и взрослых в Курске. Мастер спорта международного класса, 3-кратный чемпион мира. Запишитесь на пробное занятие!">
+  <meta property="og:image" content="images/logo.webp">
+  <meta property="og:url" content="https://katsuro.vercel.app/">
+  <meta property="og:site_name" content="KATSURO">
+
+  <!-- Yandex specific -->
+  <meta name="yandex-verification" content="">
+  <meta name="geo.region" content="RU-KRS">
+  <meta name="geo.placename" content="Курск">
+  <meta name="geo.position" content="51.7272;36.5874">
+  <meta name="ICBM" content="51.7272, 36.5874">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Академия каратэ KATSURO">
+  <meta name="twitter:description" content="Тренировки каратэ для детей и взрослых в Курске. Мастер спорта, чемпион мира.">
+  <meta name="twitter:image" content="images/logo.webp">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&family=Noto+Serif:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Structured Data / JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsActivityLocation",
+    "name": "KATSURO — Академия каратэ",
+    "description": "Академия каратэ KATSURO. Тренировки каратэ для детей от 4 лет и взрослых в Курске. Мастер спорта международного класса, 3-кратный чемпион мира.",
+    "url": "https://katsuro.vercel.app/",
+    "telephone": "+7-929-036-32-56",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ул. 50 лет Октября, 135",
+      "addressLocality": "Курск",
+      "addressRegion": "Курская область",
+      "addressCountry": "RU"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 51.7272,
+      "longitude": 36.5874
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Thursday", "Friday"],
+        "opens": "17:00",
+        "closes": "20:00"
+      }
+    ],
+    "priceRange": "$$",
+    "sport": "Karate",
+    "availableLanguage": "Russian",
+    "founder": {
+      "@type": "Person",
+      "name": "Полина Александра Юрьевна",
+      "jobTitle": "Тренер",
+      "description": "Мастер спорта международного класса, чёрный пояс 2 дан, 3-кратный чемпион мира, 3-кратный чемпион России"
+    },
+    "sameAs": [
+      "https://vk.com/katsurokarate"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="belt-scroll" aria-hidden="true">
+    <div class="belt-scroll__track" id="beltScrollTrack">
+      <div class="belt-scroll__thumb">
+        <span class="belt-scroll__stripe"></span>
+      </div>
+      <button class="belt-scroll__dot" data-section="hero" title="Главная"></button>
+      <button class="belt-scroll__dot" data-section="karate-history" title="История"></button>
+      <button class="belt-scroll__dot" data-section="about" title="Тренер"></button>
+      <button class="belt-scroll__dot" data-section="path-of-mastery" title="Пояса"></button>
+      <button class="belt-scroll__dot" data-section="programs" title="Группы"></button>
+      <button class="belt-scroll__dot" data-section="students" title="Ученики"></button>
+      <button class="belt-scroll__dot" data-section="trial" title="Запись"></button>
+      <button class="belt-scroll__dot" data-section="contact" title="Контакты"></button>
+    </div>
+    <span class="belt-scroll__label">10 кю</span>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="#" class="logo">
+        <img src="images/logo.webp" alt="KATSURO" class="logo__img">
+        <span class="logo__text">KATSURO</span>
+      </a>
+      <nav class="nav">
+        <a href="#about" class="nav__link">О тренере</a>
+        <a href="#path-of-mastery" class="nav__link">Путь мастерства</a>
+        <a href="#programs" class="nav__link">Группы</a>
+        <a href="#schedule" class="nav__link">Расписание</a>
+        <a href="#students" class="nav__link">Наши ученики</a>
+        <a href="#trial" class="nav__link">Запись</a>
+        <a href="#contact" class="nav__link">Контакты</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__bg">
+      <img src="images/hero-bg.webp" alt="" class="hero__bg-img" fetchpriority="high">
+      <div class="hero__overlay"></div>
+    </div>
+    <div class="hero__inner">
+      <div class="hero__content">
+        <p class="hero__subtitle">Спортивный клуб</p>
+        <h1 class="hero__title">KATSURO</h1>
+        <p class="hero__text">«Katsuro» — путь победы.<br>Мы не просто учим боевым приёмам, а ведём по особому пути самосовершенствования.</p>
+        <a href="#trial" class="btn btn--primary">ЗАПИСАТЬСЯ НА ТРЕНИРОВКУ</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- KARATE HISTORY -->
+  <section id="karate-history" class="history section section--gray">
+    <div class="container">
+      <div class="history__header">
+        <span class="section__label">История каратэ</span>
+        <h2 class="section__title">ИСКУССТВО, РОЖДЁННОЕ В ТАЙНЕ</h2>
+        <p class="section__subtitle">Каратэ — это история о том, как запрет на оружие превратил человеческое тело в инструмент защиты, дисциплины и внутренней силы.</p>
+      </div>
+
+      <div class="history__grid">
+        <article class="history__story">
+          <h3>Путь «пустой руки»</h3>
+          <p>Истоки каратэ ведут на архипелаг Рюкю, современную Окинаву. Здесь торговые пути соединяли Японию, Китай и Корею, а местное искусство «Тэ» впитало влияние китайских боевых стилей.</p>
+          <p>В XV-XVII веках запреты на оружие заставили жителей искать другой способ защиты. Тренировки проходили тайно, часто ночью, а сила рождалась из терпения, повторения и умения сохранять спокойствие.</p>
+        </article>
+
+        <div class="history__timeline">
+          <div class="history__point">
+            <span>XV-XVII вв.</span>
+            <strong>Окинава и запрет оружия</strong>
+            <p>Люди превращали в оружие собственные руки, ноги и простые предметы быта.</p>
+          </div>
+          <div class="history__point">
+            <span>1922</span>
+            <strong>Гитин Фунакоси в Токио</strong>
+            <p>Мастер впервые широко представил каратэ в основной Японии и открыл путь искусству в мир.</p>
+          </div>
+          <div class="history__point">
+            <span>空手</span>
+            <strong>«Пустая рука»</strong>
+            <p>Название говорит не только об отсутствии оружия, но и о чистоте духа: без злобы, страха и лишнего эго.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="history__lesson">
+        <span>空手に先手なし</span>
+        <p>«В каратэ не бывает первой атаки». Главная победа начинается не с удара, а с умения владеть собой.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about section">
+    <div class="container">
+      <div class="about__grid">
+        <div class="about__image">
+          <img src="images/trainer.webp" alt="Полина Александра Юрьевна" loading="lazy">
+          <div class="about__badge">17+ лет в каратэ</div>
+        </div>
+        <div class="about__content">
+          <span class="section__label">Тренер в KATSURO</span>
+          <h2 class="section__title">ПОЛИНА АЛЕКСАНДРА ЮРЬЕВНА</h2>
+          <p class="about__lead">Опытный наставник, который соединяет спортивную требовательность, уважительное отношение к ученикам и глубокое понимание каратэ. На тренировках Полины Александры Юрьевны дети и взрослые учатся не только технике, но и выдержке, собранности, уверенности и умению спокойно двигаться к результату.</p>
+          <div class="about__credentials">
+            <p><strong>Мастер спорта международного класса</strong></p>
+            <p><strong>Чёрный пояс 2 дан</strong></p>
+          </div>
+          <ul class="about__achievements">
+            <li>
+              <span class="about__ach-icon">🏆</span>
+              <span>3-х кратный Чемпион Мира</span>
+            </li>
+            <li>
+              <span class="about__ach-icon">🥇</span>
+              <span>3-х кратный Чемпион России</span>
+            </li>
+            <li>
+              <span class="about__ach-icon">🥈</span>
+              <span>Серебряный призер Кубка России</span>
+            </li>
+            <li>
+              <span class="about__ach-icon">🥋</span>
+              <span>Стаж в каратэ: 17+ лет</span>
+            </li>
+            <li>
+              <span class="about__ach-icon">⏱️</span>
+              <span>Тренерский стаж: 9+ лет</span>
+            </li>
+            <li>
+              <span class="about__ach-icon">🌐</span>
+              <span>Многократный победитель международных соревнований</span>
+            </li>
+          </ul>
+          <div class="about__philosophy">
+            <blockquote>"Победа в Katsuro понимается глубже — это не только победа на татами, но и победа над ленью, страхом, слабостями."</blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПУТЬ К МАСТЕРСТВУ -->
+  <section id="path-of-mastery" class="path-of-mastery">
+    <div class="container">
+      <span class="section__label section__label--light">Система поясов WKC</span>
+      <h2 class="path-of-mastery__title">ПУТЬ К МАСТЕРСТВУ</h2>
+      <p class="path-of-mastery__intro">Каждый пояс — это не просто новый цвет, а ступень характера: дисциплина, уважение, техника и внутренняя смелость. Полный путь от белого пояса до чёрного требует регулярных тренировок и постепенно превращает новичка в уверенного каратиста.</p>
+      <div class="belt-grid" aria-label="Путь по поясам WKC"></div>
+    </div>
+  </section>
+
+  <!-- PROGRAMS -->
+  <section id="programs" class="programs section">
+    <div class="container">
+      <span class="section__label">Направления</span>
+      <h2 class="section__title">ГРУППЫ ДЛЯ РАЗНОГО ВОЗРАСТА И ЦЕЛЕЙ</h2>
+      <p class="section__subtitle">Тренировки выстроены так, чтобы ученик чувствовал прогресс, безопасность и интерес на каждом этапе.</p>
+      <div class="programs__grid">
+        <article class="program-card">
+          <span class="program-card__age">4-7 лет</span>
+          <h3>Первые шаги</h3>
+          <p>Игровая дисциплина, координация, гибкость и уважение к тренеру. Дети учатся слушать, двигаться и радоваться маленьким победам.</p>
+        </article>
+        <article class="program-card">
+          <span class="program-card__age">8-12 лет</span>
+          <h3>Рост характера</h3>
+          <p>Базовая техника, ката, работа в паре и подготовка к первым соревнованиям. Ученик становится собраннее, смелее и ответственнее.</p>
+        </article>
+        <article class="program-card">
+          <span class="program-card__age">13+ и взрослые</span>
+          <h3>Сила и форма</h3>
+          <p>Тренировки для выносливости, пластики, уверенности и глубокой техники. Подходит для новичков и тех, кто возвращается в спорт.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="values section section--gray">
+    <div class="container">
+      <span class="section__label">Атмосфера клуба</span>
+      <h2 class="section__title">ЧЕМУ УЧИТ KATSURO</h2>
+      <p class="section__subtitle">Тренировка в KATSURO строится не вокруг хаотичной нагрузки, а вокруг понятного роста: тело, характер, техника и поведение в команде развиваются одновременно.</p>
+      <div class="values__grid">
+        <article class="value-item">
+          <span class="value-item__number">01</span>
+          <h3>Дисциплина и режим</h3>
+          <p>Ученик привыкает к правилам зала, уважению к тренеру и партнёрам, регулярной работе без спешки и суеты.</p>
+          <ul>
+            <li>пунктуальность и порядок</li>
+            <li>концентрация на задании</li>
+            <li>ответственность за прогресс</li>
+          </ul>
+        </article>
+        <article class="value-item">
+          <span class="value-item__number">02</span>
+          <h3>Физическая база</h3>
+          <p>Занятия развивают координацию, гибкость, скорость реакции и выносливость, которые важны и в спорте, и в повседневной жизни.</p>
+          <ul>
+            <li>общая физическая подготовка</li>
+            <li>баланс и контроль тела</li>
+            <li>безопасное развитие силы</li>
+          </ul>
+        </article>
+        <article class="value-item">
+          <span class="value-item__number">03</span>
+          <h3>Техника каратэ</h3>
+          <p>Каждое движение разбирается поэтапно: стойка, удар, защита, дистанция и работа в паре становятся понятной системой.</p>
+          <ul>
+            <li>кихон, ката и кумитэ</li>
+            <li>точность движений</li>
+            <li>подготовка к аттестации</li>
+          </ul>
+        </article>
+        <article class="value-item">
+          <span class="value-item__number">04</span>
+          <h3>Уверенность и команда</h3>
+          <p>Ученики учатся спокойно действовать под давлением, поддерживать друг друга и достойно относиться к победам и ошибкам.</p>
+          <ul>
+            <li>самоконтроль</li>
+            <li>уважение к сопернику</li>
+            <li>здоровая соревновательность</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section id="schedule" class="schedule section section--gray">
+    <div class="container">
+      <span class="section__label">Расписание занятий</span>
+      <h2 class="section__title">ГРАФИК ТРЕНИРОВОК</h2>
+      <p class="section__subtitle">Занятия проходят четыре раза в неделю: младшая группа тренируется с 17:00 до 18:00, старшая группа — с 18:00 до 20:00.</p>
+
+      <div class="schedule__grid">
+        <div class="schedule__day">
+          <div class="schedule__day-header">
+            <span class="schedule__day-name">ПОНЕДЕЛЬНИК</span>
+            <span class="schedule__day-date">17:00 — 20:00</span>
+          </div>
+          <div class="schedule__classes">
+            <div class="schedule__class">
+              <span class="schedule__time">17:00</span>
+              <span class="schedule__name">Младшая группа</span>
+              <span class="schedule__level level--beginner">до 18:00</span>
+            </div>
+            <div class="schedule__class">
+              <span class="schedule__time">18:00</span>
+              <span class="schedule__name">Старшая группа</span>
+              <span class="schedule__level level--advanced">до 20:00</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule__day">
+          <div class="schedule__day-header">
+            <span class="schedule__day-name">ВТОРНИК</span>
+            <span class="schedule__day-date">17:00 — 20:00</span>
+          </div>
+          <div class="schedule__classes">
+            <div class="schedule__class">
+              <span class="schedule__time">17:00</span>
+              <span class="schedule__name">Младшая группа</span>
+              <span class="schedule__level level--beginner">до 18:00</span>
+            </div>
+            <div class="schedule__class">
+              <span class="schedule__time">18:00</span>
+              <span class="schedule__name">Старшая группа</span>
+              <span class="schedule__level level--advanced">до 20:00</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule__day">
+          <div class="schedule__day-header">
+            <span class="schedule__day-name">ЧЕТВЕРГ</span>
+            <span class="schedule__day-date">17:00 — 20:00</span>
+          </div>
+          <div class="schedule__classes">
+            <div class="schedule__class">
+              <span class="schedule__time">17:00</span>
+              <span class="schedule__name">Младшая группа</span>
+              <span class="schedule__level level--beginner">до 18:00</span>
+            </div>
+            <div class="schedule__class">
+              <span class="schedule__time">18:00</span>
+              <span class="schedule__name">Старшая группа</span>
+              <span class="schedule__level level--advanced">до 20:00</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule__day">
+          <div class="schedule__day-header">
+            <span class="schedule__day-name">ПЯТНИЦА</span>
+            <span class="schedule__day-date">17:00 — 20:00</span>
+          </div>
+          <div class="schedule__classes">
+            <div class="schedule__class">
+              <span class="schedule__time">17:00</span>
+              <span class="schedule__name">Младшая группа</span>
+              <span class="schedule__level level--beginner">до 18:00</span>
+            </div>
+            <div class="schedule__class">
+              <span class="schedule__time">18:00</span>
+              <span class="schedule__name">Старшая группа</span>
+              <span class="schedule__level level--advanced">до 20:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STUDENTS -->
+  <section id="students" class="students section">
+    <div class="container">
+      <span class="section__label">Наши ученики</span>
+      <h2 class="section__title">ПОКОЛЕНИЕ ЧЕМПИОНОВ</h2>
+      <p class="section__subtitle">Откройте альбомы клуба: соревнования, сборы, ГТО и моменты командной жизни.</p>
+
+      <div class="students__grid">
+        <button class="students__card" type="button" data-album="competitions">
+          <div class="students__card-img">
+            <img src="images/sorevnovania6.webp" alt="Соревнования по каратэ" loading="lazy">
+          </div>
+          <div class="students__card-body">
+            <div class="students__card-icon">🏆</div>
+            <h3 class="students__card-title">Соревнования</h3>
+            <p class="students__card-text">Турниры, первые старты и победный опыт</p>
+            <span class="students__card-cta">Открыть альбом →</span>
+          </div>
+        </button>
+
+        <button class="students__card" type="button" data-album="seminars">
+          <div class="students__card-img">
+            <img src="images/Sbori.webp" alt="Сборы и семинары" loading="lazy">
+          </div>
+          <div class="students__card-body">
+            <div class="students__card-icon">📚</div>
+            <h3 class="students__card-title">Сборы и семинары</h3>
+            <p class="students__card-text">Учебные занятия, техника и командный рост</p>
+            <span class="students__card-cta">Открыть альбом →</span>
+          </div>
+        </button>
+
+        <button class="students__card" type="button" data-album="gto">
+          <div class="students__card-img">
+            <img src="images/GTO.webp" alt="ГТО и физическая подготовка" loading="lazy">
+          </div>
+          <div class="students__card-body">
+            <div class="students__card-icon">💪</div>
+            <h3 class="students__card-title">ГТО и ОФП</h3>
+            <p class="students__card-text">Выносливость, сила, координация и нормативы</p>
+            <span class="students__card-cta">Открыть альбом →</span>
+          </div>
+        </button>
+
+        <button class="students__card" type="button" data-album="club">
+          <div class="students__card-img">
+            <img src="images/ycheniki.webp" alt="Жизнь клуба KATSURO" loading="lazy">
+          </div>
+          <div class="students__card-body">
+            <div class="students__card-icon">🥋</div>
+            <h3 class="students__card-title">Жизнь клуба</h3>
+            <p class="students__card-text">Тренировки, аттестации и моменты команды</p>
+            <span class="students__card-cta">Открыть альбом →</span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALBUM LIGHTBOX -->
+  <div class="lightbox" id="albumLightbox" aria-hidden="true">
+    <div class="lightbox__backdrop"></div>
+    <div class="lightbox__dialog">
+      <div class="lightbox__header">
+        <h3 class="lightbox__title" id="lightboxTitle"></h3>
+        <button class="lightbox__close" type="button" aria-label="Закрыть">✕</button>
+      </div>
+      <div class="lightbox__body" id="lightboxBody">
+        <div class="lightbox__grid" id="lightboxGrid"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHOTO VIEWER -->
+  <div class="photo-viewer" id="photoViewer" aria-hidden="true">
+    <div class="photo-viewer__backdrop"></div>
+    <div class="photo-viewer__wrap">
+      <button class="photo-viewer__btn photo-viewer__btn--prev" type="button" aria-label="Предыдущее фото">‹</button>
+      <div class="photo-viewer__stage">
+        <img class="photo-viewer__img" id="photoViewerImg" src="" alt="">
+        <span class="photo-viewer__caption" id="photoViewerCaption"></span>
+        <span class="photo-viewer__counter" id="photoViewerCounter"></span>
+      </div>
+      <button class="photo-viewer__btn photo-viewer__btn--next" type="button" aria-label="Следующее фото">›</button>
+      <button class="photo-viewer__close" type="button" aria-label="Закрыть">✕</button>
+    </div>
+  </div>
+
+  <!-- TRIAL FORM -->
+  <section id="trial" class="trial section">
+    <div class="container">
+      <div class="trial__grid">
+        <div class="trial__content">
+          <span class="section__label">Запись на тренировку</span>
+          <h2 class="section__title">ПРИХОДИТЕ НА ПРОБНОЕ ЗАНЯТИЕ</h2>
+          <p class="section__subtitle">Оставьте контакты, выберите удобный день и группу. Мы свяжемся с вами, чтобы подтвердить запись и подсказать, что взять с собой.</p>
+          <div class="trial__info">
+            <div>
+              <strong>Младшая группа</strong>
+              <span>17:00-18:00</span>
+            </div>
+            <div>
+              <strong>Старшая группа</strong>
+              <span>18:00-20:00</span>
+            </div>
+          </div>
+        </div>
+
+        <form class="trial-form" id="trialForm" novalidate>
+          <div class="trial-form__success" id="trialSuccess" hidden>
+            Заявка сохранена. Мы свяжемся с вами для подтверждения тренировки.
+          </div>
+
+          <label class="trial-form__field">
+            <span>Имя</span>
+            <input type="text" name="name" autocomplete="name" placeholder="Ваше имя" required>
+            <small class="trial-form__error"></small>
+          </label>
+
+          <label class="trial-form__field">
+            <span>Телефон</span>
+            <input type="tel" name="phone" autocomplete="tel" placeholder="+7 (___) ___-__-__" required>
+            <small class="trial-form__error"></small>
+          </label>
+
+          <div class="trial-form__row">
+            <label class="trial-form__field">
+              <span>Группа</span>
+              <select name="group" required>
+                <option value="">Выберите группу</option>
+                <option value="Младшая группа">Младшая группа</option>
+                <option value="Старшая группа">Старшая группа</option>
+              </select>
+              <small class="trial-form__error"></small>
+            </label>
+
+            <label class="trial-form__field">
+              <span>День</span>
+              <select name="day" required>
+                <option value="">Выберите день</option>
+                <option value="Понедельник">Понедельник</option>
+                <option value="Вторник">Вторник</option>
+                <option value="Четверг">Четверг</option>
+                <option value="Пятница">Пятница</option>
+              </select>
+              <small class="trial-form__error"></small>
+            </label>
+          </div>
+
+          <label class="trial-form__field">
+            <span>Комментарий</span>
+            <textarea name="comment" rows="4" placeholder="Возраст ученика, опыт, удобное время для звонка"></textarea>
+          </label>
+
+          <label class="trial-form__consent">
+            <input type="checkbox" name="consent" required>
+            <span>Согласен(на) на обработку контактных данных для связи по заявке</span>
+          </label>
+          <small class="trial-form__error trial-form__error--consent"></small>
+
+          <button type="submit" class="btn btn--primary btn--large trial-form__submit">ОТПРАВИТЬ ЗАЯВКУ</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact" class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="#" class="logo logo--light">
+            <img src="images/logo.webp" alt="KATSURO" class="logo__img">
+            <span class="logo__text">KATSURO</span>
+          </a>
+          <p class="footer__tagline">«Katsuro» — путь победы.<br>Мы не просто учим боевым приёмам, а ведём по особому пути самосовершенствования.</p>
+        </div>
+
+        <div class="footer__contact">
+          <h3 class="footer__heading">Контакты</h3>
+          <ul class="footer__list">
+            <li>
+              <svg class="footer__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <a href="tel:+79290363256">8-929-036-32-56</a>
+            </li>
+            <li>
+              <svg class="footer__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span>ул. 50 лет Октября, 135</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer__social">
+          <h3 class="footer__heading">Мы в соцсетях</h3>
+          <div class="footer__social-links">
+            <a href="https://vk.com/katsurokarate" class="footer__social-link" aria-label="VK" target="_blank">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.684 0H8.316C1.592 0 0 1.592 0 8.316v7.368C0 22.408 1.592 24 8.316 24h7.368C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.408 0 15.684 0zm3.692 17.123h-1.744c-.66 0-.864-.525-2.05-1.727-1.033-1-1.49-1.135-1.744-1.135-.356 0-.458.102-.458.593v1.575c0 .424-.135.678-1.253.678-1.846 0-3.896-1.118-5.335-3.202C4.624 10.857 4.03 8.57 4.03 8.096c0-.254.102-.491.593-.491h1.744c.44 0 .61.203.78.677.864 2.49 2.303 4.675 2.896 4.675.22 0 .322-.102.322-.66V9.721c-.068-1.186-.695-1.287-.695-1.71 0-.204.17-.407.44-.407h2.744c.373 0 .508.203.508.643v3.473c0 .372.17.508.271.508.22 0 .407-.136.813-.542 1.254-1.406 2.151-3.574 2.151-3.574.119-.254.322-.491.763-.491h1.744c.525 0 .644.27.525.643-.22 1.017-2.354 4.031-2.354 4.031-.186.305-.254.44 0 .78.186.254.796.779 1.203 1.253.745.847 1.32 1.558 1.473 2.05.17.49-.085.744-.576.744z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2026 KATSURO. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav');
+    navToggle.addEventListener('click', () => {
+      nav.classList.toggle('nav--open');
+      navToggle.classList.toggle('nav-toggle--active');
+    });
+
+    document.querySelectorAll('.nav__link').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('nav--open');
+        navToggle.classList.remove('nav-toggle--active');
+      });
+    });
+
+    const header = document.querySelector('.header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('header--scrolled', window.scrollY > 50);
+    });
+  </script>
+  <script>
+    const belts = [
+      { kyu: '10 кю', name: 'Белый пояс', months: '3-4 месяца', colors: ['#f7f7f7'], motto: 'Символ чистоты', quote: 'В сознании новичка много возможностей.', text: 'Белый пояс — это начало без лишней самоуверенности. Ученик учится входить в зал с уважением, слушать наставника, держать стойку, повторять базовые движения и спокойно принимать первые трудности пути.' },
+      { kyu: '9 кю', name: 'Белый с жёлтой нашивкой', months: '3-4 месяца', colors: ['#f7f7f7', '#ffe84d'], motto: 'Переход к пробуждению', quote: 'Терпение превращает повторение в мастерство.', text: 'На этом уровне появляются первые лучи понимания. База становится увереннее, движения — осознаннее, а ученик начинает чувствовать, что сила в каратэ рождается не из спешки, а из точности и контроля.' },
+      { kyu: '8 кю', name: 'Жёлтый пояс', months: '4-5 месяцев', colors: ['#ffd831'], motto: 'Символ пробуждения', quote: 'Первый луч солнца показывает направление.', text: 'Жёлтый пояс напоминает рассвет: знания уже видны, но путь только раскрывается. Ученик укрепляет дисциплину, развивает координацию и начинает понимать, что каратэ воспитывает характер так же сильно, как тело.' },
+      { kyu: '7 кю', name: 'Жёлтый с оранжевой нашивкой', months: '4-5 месяцев', colors: ['#ffe84d', '#ff9700'], motto: 'Сила растущего огня', quote: 'Упорство делает шаги заметными.', text: 'Оранжевая нашивка показывает, что энергия ученика становится ярче. Техника наполняется скоростью, появляется больше смелости в работе в паре, а каждое занятие учит направлять усилие спокойно и точно.' },
+      { kyu: '6 кю', name: 'Оранжевый пояс', months: '5-6 месяцев', colors: ['#ff9200'], motto: 'Символ энергии', quote: 'Внутренний огонь требует дисциплины.', text: 'Оранжевый пояс — этап активного роста. Ученик уже не просто повторяет движения, а начинает вкладывать в них намерение, силу и ритм. Здесь особенно важно сохранять уважение, собранность и контроль.' },
+      { kyu: '5 кю', name: 'Оранжевый с зелёной нашивкой', months: '5-6 месяцев', colors: ['#ff9200', '#85c981'], motto: 'Рост и устойчивость', quote: 'Корни крепнут там, где есть труд.', text: 'Зелёная нашивка говорит о появлении устойчивости. Ученик лучше чувствует дистанцию, увереннее держит темп тренировки и постепенно превращает отдельные приёмы в цельную систему движения и мышления.' },
+      { kyu: '4 кю', name: 'Зелёный пояс', months: '6-8 месяцев', colors: ['#34a853'], motto: 'Символ развития', quote: 'Сила без спокойствия теряет красоту.', text: 'Зелёный пояс — время зрелого роста. Техника становится чище, стойки крепче, а отношение к занятиям серьёзнее. Ученик учится не только выполнять команды, но и отвечать за качество своей работы.' },
+      { kyu: '3 кю', name: 'Зелёный с синей полоской', months: '8-10 месяцев', colors: ['#34a853', '#2878d8'], motto: 'Переход к глубине', quote: 'Рост продолжается там, где появляется точность.', text: 'Синяя полоска добавляет глубину к устойчивой базе. Ученик соединяет силу, скорость и понимание дистанции, начинает мыслить тактически и видит, что мастерство строится из внимательных деталей.' },
+      { kyu: '2 кю', name: 'Синий пояс', months: '10-12 месяцев', colors: ['#2878d8'], motto: 'Широта взгляда', quote: 'Небо открывается тем, кто продолжает идти.', text: 'Синий пояс символизирует пространство и зрелость взгляда. Ученик увереннее действует под давлением, быстрее принимает решения и учится сохранять спокойствие, даже когда техника требует силы и скорости.' },
+      { kyu: '1 кю', name: 'Коричневый пояс', months: '12+ месяцев', colors: ['#79512e'], motto: 'Прочная основа', quote: 'Чёрный пояс начинается задолго до экзамена.', text: 'Коричневый пояс — последняя ступень перед новым началом. Здесь проверяются не только удары и ката, но и характер: выдержка, уважение, стабильность, готовность быть примером для младших учеников.' },
+      { kyu: '1 дан', name: 'Чёрный пояс', months: '9-10 лет пути', colors: ['#111111'], motto: 'Мастерство основ', quote: 'Чёрный пояс — это белый пояс, который не перестал тренироваться.', text: 'Чёрный пояс не завершает путь, а открывает его глубину. Ученик становится носителем традиции: он владеет базой, понимает ответственность силы и продолжает совершенствовать технику, дух и отношение к людям.' },
+      {
+  kyu: 'Карате',
+  name: 'Продолжение пути',
+  months: 'Всю жизнь',
+  colors: ['#111111'],
+  motto: 'Настоящее мастерство — в постоянстве',
+  quote: 'Победа начинается там, где человек выбирает не останавливаться.',
+  text: 'Путь искусства «пустой руки», зародившегося на Окинаве и открытого миру Гитином Фунакоси в 1922 году, не заканчивается черным поясом. Каждая тренировка выковывает характер: дарует спокойствие, оттачивает точность и взращивает внутреннюю силу. KATSURO — ваш проводник на этом пути. Шаг за шагом, пояс за поясом, мы помогаем вам идти вперед и побеждать.',
+  japanese: '空手道',
+  highlight: true,
+  historical: true
+}
+    ];
+  </script>
+  <script src="script.js" defer></script>
+</body>
+</html>
